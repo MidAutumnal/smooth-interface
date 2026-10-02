@@ -71,12 +71,12 @@ public final class SmoothInterfaceConfig {
 		}
 
 		public static final boolean TOOLTIP_ENABLED = true;
-		public static final int TOOLTIP_FADE_IN_MS = 240;
-		public static final int TOOLTIP_FADE_OUT_MS = 200;
+		public static final int TOOLTIP_FADE_IN_MS = 250;
+		public static final int TOOLTIP_FADE_OUT_MS = 250;
 		public static final int TOOLTIP_START_SCALE_PERCENT = 90;
 		public static final int TOOLTIP_START_OFFSET_PX = 5;
 
-		public static final boolean SCREEN_ENABLED = true;
+		public static final boolean SCREEN_ENABLED = false;
 		public static final int SCREEN_FADE_IN_MS = 380;
 		public static final int SCREEN_FADE_OUT_MS = 180;
 		public static final int SCREEN_MAX_DIM_PERCENT = 78;
