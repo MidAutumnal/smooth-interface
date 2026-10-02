@@ -25,26 +25,26 @@ import net.minecraft.world.item.ItemStack;
 /**
  * 平滑效果的核心。
  *
- * <p>26.2 里 GUI 不再「边算边画」，而是先把所有绘制指令丢进
- * {@code GuiRenderState}，最后统一提交。所有绘制最终都收敛到几个方法：</p>
- * <ul>
- *     <li>{@code text(...)} —— 文字，内部会 new 一个 GuiTextRenderState</li>
- *     <li>{@code blitSprite(...)} —— 精灵图（tooltip 的圆角背景、边框就是它画的）</li>
- *     <li>{@code itemCount(...)} —— 槽位右下角的物品数量数字，它内部也是调 text()</li>
- * </ul>
+ * 26.2 里 GUI 不再「边算边画」，而是先把所有绘制指令丢进
+ * {@code GuiRenderState}，最后统一提交。所有绘制最终都收敛到几个方法：
  *
- * <p>所以只要在这些方法入口处，把颜色参数的 alpha 乘上一个系数，
+ *     {@code text(...)} —— 文字，内部会 new 一个 GuiTextRenderState
+ *     {@code blitSprite(...)} —— 精灵图（tooltip 的圆角背景、边框就是它画的）
+ *     {@code itemCount(...)} —— 槽位右下角的物品数量数字，它内部也是调 text()
+ *
+ *
+ * 所以只要在这些方法入口处，把颜色参数的 alpha 乘上一个系数，
  * 就能让「这一段时间内提交的所有内容」整体变透明。再配合
  * {@link InterfaceAnimator} 打开/关闭的作用域，就能把影响范围精确限制在
- * tooltip 和物品数量数字上。</p>
+ * tooltip 和物品数量数字上。
  *
- * <p>关于彩色文字：物品名常带颜色（附魔、自定义名），那种颜色是写在
+ * 关于彩色文字：物品名常带颜色（附魔、自定义名），那种颜色是写在
  * {@code Style} 里的。好消息是原版 {@code Font} 计算最终颜色时是
  * {@code ARGB.color(ARGB.alpha(基础颜色), 样式颜色)}，也就是「基础颜色的 alpha 会被沿用」。
- * 所以我们只改基础颜色的 alpha，带颜色的文字也会跟着一起淡入淡出。</p>
+ * 所以我们只改基础颜色的 alpha，带颜色的文字也会跟着一起淡入淡出。
  *
- * <p>另外 tooltip 还会额外做一次缩放 + 位移，那是通过往 GUI 的 2D 矩阵栈里压一层变换实现的，
- * 见 {@link InterfaceAnimator#pushTooltipTransform}。</p>
+ * 另外 tooltip 还会额外做一次缩放 + 位移，那是通过往 GUI 的 2D 矩阵栈里压一层变换实现的，
+ * 见 {@link InterfaceAnimator#pushTooltipTransform}。
  */
 @Mixin(GuiGraphicsExtractor.class)
 public abstract class GuiGraphicsExtractorMixin {

@@ -47,7 +47,7 @@ public final class InterfaceAnimator {
 	/** tooltip 的淡入淡出。时长由 {@link #applyConfig()} 推上来。 */
 	private static final FadeAnimator TOOLTIP_FADE = new FadeAnimator(0.001F, 0.001F);
 
-	/** 打开界面时白色遮罩的淡出。 */
+	/** 打开界面时黑色遮罩的淡出。 */
 	private static final FadeAnimator SCREEN_FADE = createScreenFade();
 
 	/** 本帧实际被绘制的 tooltip 参数（tooltip() 头部记录）。 */

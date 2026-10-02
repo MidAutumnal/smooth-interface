@@ -38,6 +38,6 @@ public abstract class ScreenMixin {
 		// 单独开一层，保证遮罩盖在整个界面（含 tooltip）之上。
 		// ARGB.black(alpha) 就是「纯黑 + 指定透明度」。
 		graphics.nextStratum();
-		graphics.fill(0, 0, graphics.guiWidth(), graphics.guiHeight(), ARGB.white(dim));
+		graphics.fill(0, 0, graphics.guiWidth(), graphics.guiHeight(), ARGB.black(dim));
 	}
 }

@@ -127,7 +127,7 @@ public final class SmoothInterfaceConfig {
 		}
 	}
 
-	/** 打开界面时的白色遮罩淡出。 */
+	/** 打开界面时的黑色遮罩淡出。 */
 	public static final class ScreenFade {
 		public boolean enabled = Defaults.SCREEN_ENABLED;
 		/** 遮罩淡出（= 界面淡入）的时长（毫秒）。 */
