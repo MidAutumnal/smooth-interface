@@ -16,14 +16,14 @@ import net.minecraft.network.chat.Component;
 /**
  * 游戏内配置界面。
  *
- * <p>界面本身交给 Cloth Config 渲染，我们只负责「有哪些选项、取值范围多少、改完存哪」。
- * 三个分类对应三大块功能，每个条目都带一句中文说明。</p>
+ * 界面本身交给 Cloth Config 渲染，我们只负责「有哪些选项、取值范围多少、改完存哪」。
+ * 三个分类对应三大块功能，每个条目都带一句中文说明。
  *
- * <p>入口是 ModMenu 的模组列表 → Smooth Interface → 设置按钮，
- * 见 {@link ModMenuIntegration}。</p>
+ * 入口是 ModMenu 的模组列表 → Smooth Interface → 设置按钮，
+ * 见 {@link ModMenuIntegration}。
  *
- * <p><b>关于单位</b>：时长一律用「毫秒」的整数滑块而不是浮点数输入框 ——
- * 拖一下就能调、能直接看出快慢，也不会因为手打数字写出离谱的值。</p>
+ * 关于单位：时长一律用「毫秒」的整数滑块而不是浮点数输入框 ——
+ * 拖一下就能调、能直接看出快慢，也不会因为手打数字写出离谱的值。
  */
 public final class SmoothInterfaceConfigScreen {
 

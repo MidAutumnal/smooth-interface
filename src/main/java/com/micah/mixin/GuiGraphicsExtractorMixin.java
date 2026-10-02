@@ -84,8 +84,8 @@ public abstract class GuiGraphicsExtractorMixin {
 	/**
 	 * 槽位里的物品数量数字。
 	 *
-	 * <p>原版实现就是「拿到数量 -> 算个右下角坐标 -> 调 text()」，
-	 * 所以在这里开一个作用域就够了，真正改颜色的是下面拦截 text 的那一段。</p>
+	 * 原版实现就是「拿到数量 -> 算个右下角坐标 -> 调 text()」，
+	 * 所以在这里开一个作用域就够了，真正改颜色的是下面拦截 text 的那一段。
 	 */
 	@Inject(method = "itemCount(Lnet/minecraft/client/gui/Font;Lnet/minecraft/world/item/ItemStack;IILjava/lang/String;)V",
 			at = @At("HEAD"))
@@ -104,8 +104,8 @@ public abstract class GuiGraphicsExtractorMixin {
 	/**
 	 * 文字：把颜色 alpha 乘上当前透明度。
 	 *
-	 * <p>用 cancellable + 重新调用带新颜色的重载，比 @ModifyArg 更直观，
-	 * 代价是需要一个守卫防止自己拦截自己（见 withoutFade）。</p>
+	 * 用 cancellable + 重新调用带新颜色的重载，比 @ModifyArg 更直观，
+	 * 代价是需要一个守卫防止自己拦截自己（见 withoutFade）。
 	 */
 	@Inject(method = "text(Lnet/minecraft/client/gui/Font;Lnet/minecraft/util/FormattedCharSequence;IIIZ)V",
 			at = @At("HEAD"), cancellable = true)

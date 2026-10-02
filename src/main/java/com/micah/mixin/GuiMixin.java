@@ -14,8 +14,8 @@ import net.minecraft.client.gui.screens.Screen;
 /**
  * 挂在 {@link Gui#extractRenderState} 上，拿到「每帧一次」的钩子。
  *
- * <p>整帧的渲染顺序是：
- * <pre>
+ * 整帧的渲染顺序是：
+ *
  *   Gui.extractRenderState           ← beginFrame() 在这里
  *     ├─ Hud.extractRenderState
  *     ├─ Screen.extractRenderStateWithTooltipAndSubtitles
@@ -25,9 +25,9 @@ import net.minecraft.client.gui.screens.Screen;
  *     └─ ...
  *                                   ← endOfExtraction() 在这里（淡出补画）
  *   GuiRenderer.render()             ← 之后才真正提交 GPU
- * </pre>
+ *
  * 也就是说「提取」阶段把所有绘制指令收集起来，后面才统一渲染，
- * 所以我们在提取阶段修改颜色是来得及的。</p>
+ * 所以我们在提取阶段修改颜色是来得及的。
  */
 @Mixin(Gui.class)
 public abstract class GuiMixin {

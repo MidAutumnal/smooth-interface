@@ -22,21 +22,20 @@ import net.minecraft.util.Mth;
 /**
  * 所有平滑效果的调度中心。
  *
- * <p>一帧的流程（由 {@code GuiMixin} 驱动）：</p>
- * <ol>
- *     <li>{@link #beginFrame} —— 一帧开始。用「上一帧有没有出现 tooltip」决定目标状态，
- *         再用本帧 dt 推进补间。放在最前面是为了让本帧渲染时读到的透明度已经是新的值。</li>
- *     <li>帧中间的渲染阶段 —— 绘制 tooltip / 物品数量时会打开「透明度作用域」，
- *         此时所有文字 / 精灵图的颜色 alpha 都会被乘以当前透明度，见 {@link #shouldApplyFade()}。</li>
- *     <li>{@link #endOfExtraction()} —— 界面提取结束。如果这一帧压根没画过 tooltip，
- *         就把上一帧缓存的 tooltip 用递减的透明度再画一遍，实现淡出。</li>
- * </ol>
+ * 一帧的流程（由 {@code GuiMixin} 驱动）：
  *
- * <p>为什么淡出要「补画」？因为原版是按需绘制的：鼠标离开物品后 Minecraft 就不再
- * 提交 tooltip 了，如果不自己补一帧，tooltip 会瞬间消失，根本来不及淡出。</p>
+ *     {@link #beginFrame} —— 一帧开始。用「上一帧有没有出现 tooltip」决定目标状态，
+ *         再用本帧 dt 推进补间。放在最前面是为了让本帧渲染时读到的透明度已经是新的值。
+ *     帧中间的渲染阶段 —— 绘制 tooltip / 物品数量时会打开「透明度作用域」，
+ *         此时所有文字 / 精灵图的颜色 alpha 都会被乘以当前透明度，见 {@link #shouldApplyFade()}。
+ *     {@link #endOfExtraction()} —— 界面提取结束。如果这一帧压根没画过 tooltip，
+ *         就把上一帧缓存的 tooltip 用递减的透明度再画一遍，实现淡出。
  *
- * <p>所有参数都从 {@link SmoothInterfaceConfig} 现读，所以在配置界面里改完
- * 调一次 {@link #applyConfig()} 就立刻生效，不需要重启游戏。</p>
+ * 为什么淡出要「补画」？因为原版是按需绘制的：鼠标离开物品后 Minecraft 就不再
+ * 提交 tooltip 了，如果不自己补一帧，tooltip 会瞬间消失，根本来不及淡出。
+ *
+ * 所有参数都从 {@link SmoothInterfaceConfig} 现读，所以在配置界面里改完
+ * 调一次 {@link #applyConfig()} 就立刻生效，不需要重启游戏。
  */
 public final class InterfaceAnimator {
 
@@ -48,7 +47,7 @@ public final class InterfaceAnimator {
 	/** tooltip 的淡入淡出。时长由 {@link #applyConfig()} 推上来。 */
 	private static final FadeAnimator TOOLTIP_FADE = new FadeAnimator(0.001F, 0.001F);
 
-	/** 打开界面时黑色遮罩的淡出。 */
+	/** 打开界面时白色遮罩的淡出。 */
 	private static final FadeAnimator SCREEN_FADE = createScreenFade();
 
 	/** 本帧实际被绘制的 tooltip 参数（tooltip() 头部记录）。 */
@@ -243,11 +242,11 @@ public final class InterfaceAnimator {
 	/**
 	 * 给 tooltip 加一层「从起始缩放放大到 1.0、同时往上浮几像素」的变换。
 	 *
-	 * <p>做法是往 GUI 的 2D 矩阵栈里压一层变换：26.2 的每个绘制指令在提交时都会
+	 * 做法是往 GUI 的 2D 矩阵栈里压一层变换：26.2 的每个绘制指令在提交时都会
 	 * 拷贝一份当前矩阵（{@code new Matrix3x2f(pose)}），所以在这里压栈，
-	 * tooltip 里的文字、背景、物品图标就会整体一起平移和缩放。</p>
+	 * tooltip 里的文字、背景、物品图标就会整体一起平移和缩放。
 	 *
-	 * <p>必须以 {@link #popTooltipTransform} 配对收尾。</p>
+	 * 必须以 {@link #popTooltipTransform} 配对收尾。
 	 *
 	 * @param xo,yo 原始鼠标坐标，拿来当缩放的中心（tooltip 会朝鼠标点收缩）
 	 * @return 是否真的压了栈；只有返回 true 时调用方才需要 pop

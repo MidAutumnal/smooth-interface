@@ -17,14 +17,14 @@ import net.minecraft.util.Mth;
 /**
  * 动画参数配置。
  *
- * <p>所有可调项都存在 {@code config/smooth-interface.json} 里，游戏内通过
- * ModMenu → Smooth Interface → 设置按钮打开配置界面（界面由 Cloth Config 渲染）。</p>
+ * 所有可调项都存在 {@code config/smooth-interface.json} 里，游戏内通过
+ * ModMenu → Smooth Interface → 设置按钮打开配置界面（界面由 Cloth Config 渲染）。
  *
- * <p><b>单位约定</b>：为了让滑块好用，配置里时长统一存「毫秒」（int）、
+ * 单位约定：为了让滑块好用，配置里时长统一存「毫秒」（int）、
  * 强度统一存「百分比」（int），只在真正使用时才换算成秒 / 倍数 ——
- * 也就是各个 {@code *Seconds()} / {@code *Scale()} 方法。</p>
+ * 也就是各个 {@code *Seconds()} / {@code *Scale()} 方法。
  *
- * <p>字段名直接就是 JSON 里的键名，所以**不要随便改字段名**，改了等于把玩家已有的配置丢掉。</p>
+ * 字段名直接就是 JSON 里的键名，所以**不要随便改字段名**，改了等于把玩家已有的配置丢掉。
  */
 public final class SmoothInterfaceConfig {
 
@@ -63,8 +63,8 @@ public final class SmoothInterfaceConfig {
 	/**
 	 * 出厂默认值。
 	 *
-	 * <p>字段初始值和配置界面里「重置」按钮用的默认值都取这里，
-	 * 保证两边不会各写一份然后对不上。</p>
+	 * 字段初始值和配置界面里「重置」按钮用的默认值都取这里，
+	 * 保证两边不会各写一份然后对不上。
 	 */
 	public static final class Defaults {
 		private Defaults() {
@@ -127,7 +127,7 @@ public final class SmoothInterfaceConfig {
 		}
 	}
 
-	/** 打开界面时的黑色遮罩淡出。 */
+	/** 打开界面时的白色遮罩淡出。 */
 	public static final class ScreenFade {
 		public boolean enabled = Defaults.SCREEN_ENABLED;
 		/** 遮罩淡出（= 界面淡入）的时长（毫秒）。 */
@@ -160,7 +160,7 @@ public final class SmoothInterfaceConfig {
 		/**
 		 * 数字发生变化时从多少亮度开始回弹（百分比）。
 		 *
-		 * <p>不从 0 开始是为了避免连续拾取 / 连续转移时数字一直处于全透明状态。</p>
+		 * 不从 0 开始是为了避免连续拾取 / 连续转移时数字一直处于全透明状态。
 		 */
 		public int changeMinAlphaPercent = Defaults.ITEM_COUNT_CHANGE_MIN_ALPHA_PERCENT;
 		/** 界面刚打开时的波浪延迟：每往右 / 往下一格多等多少毫秒。 */
