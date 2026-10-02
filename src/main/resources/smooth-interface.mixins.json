@@ -2,8 +2,11 @@
 	"required": true,
 	"package": "com.micah.mixin",
 	"compatibilityLevel": "JAVA_25",
-	"mixins": [
-		"ExampleMixin"
+	"mixins": [],
+	"client": [
+		"GuiMixin",
+		"GuiGraphicsExtractorMixin",
+		"ScreenMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

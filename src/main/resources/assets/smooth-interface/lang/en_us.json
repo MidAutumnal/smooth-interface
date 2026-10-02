@@ -1,0 +1,47 @@
+{
+	"smooth-interface.config.title": "Smooth Interface Settings",
+
+	"smooth-interface.config.category.tooltip": "Item tooltips",
+	"smooth-interface.config.category.tooltip.desc": "The info box shown when you hover an item. These options control its fade, plus the scale and lift it does on appearance.",
+	"smooth-interface.config.category.screen": "Screen fade-in",
+	"smooth-interface.config.category.screen.desc": "The overall fade when a screen opens. It works by covering the screen with a black overlay and fading that out.",
+	"smooth-interface.config.category.itemCount": "Item count numbers",
+	"smooth-interface.config.category.itemCount.desc": "The count in the corner of a slot (like \"64\"). When a screen opens they fade in one after another, in a diagonal wave.",
+
+	"smooth-interface.config.tooltip.enabled": "Enable tooltip fade",
+	"smooth-interface.config.tooltip.enabled.tooltip": "When off, tooltips pop in and out instantly like vanilla.",
+	"smooth-interface.config.tooltip.fadeIn": "Fade-in time",
+	"smooth-interface.config.tooltip.fadeIn.tooltip": "How long it takes for a tooltip to become fully visible after you hover an item.",
+	"smooth-interface.config.tooltip.fadeOut": "Fade-out time",
+	"smooth-interface.config.tooltip.fadeOut.tooltip": "How long it takes for a tooltip to disappear after you stop hovering. Vanilla removes it instantly, so avoid very small values.",
+	"smooth-interface.config.tooltip.startScale": "Starting scale",
+	"smooth-interface.config.tooltip.startScale.tooltip": "The size of the tooltip the moment it appears; 100% means no scaling. Around 80% gives a clear pop.",
+	"smooth-interface.config.tooltip.startOffset": "Starting offset",
+	"smooth-interface.config.tooltip.startOffset.tooltip": "How many pixels below its final spot the tooltip starts, then floats up. Set to 0 to disable the movement.",
+
+	"smooth-interface.config.screen.enabled": "Enable screen fade-in",
+	"smooth-interface.config.screen.enabled.tooltip": "When off, screens appear instantly like vanilla.",
+	"smooth-interface.config.screen.fadeIn": "Fade-in time",
+	"smooth-interface.config.screen.fadeIn.tooltip": "How long the screen takes to go from darkest to fully clear after it opens.",
+	"smooth-interface.config.screen.fadeOut": "Overlay fade-out time",
+	"smooth-interface.config.screen.fadeOut.tooltip": "Used when the overlay has to be dismissed early. Rarely noticeable; keep it shorter than the fade-in time.",
+	"smooth-interface.config.screen.maxDim": "Maximum dim",
+	"smooth-interface.config.screen.maxDim.tooltip": "How dark the overlay is at the very first moment. 0% disables the effect, 100% flashes fully black.",
+
+	"smooth-interface.config.itemCount.enabled": "Enable count fade",
+	"smooth-interface.config.itemCount.enabled.tooltip": "When off, count numbers appear instantly like vanilla.",
+	"smooth-interface.config.itemCount.fadeIn": "Fade-in time",
+	"smooth-interface.config.itemCount.fadeIn.tooltip": "How long each slot's number takes to go from transparent to fully visible.",
+	"smooth-interface.config.itemCount.fadeOut": "Fade-out time",
+	"smooth-interface.config.itemCount.fadeOut.tooltip": "How long a number takes to fade out when it disappears, for example when the stack is emptied.",
+	"smooth-interface.config.itemCount.changeMinAlpha": "Brightness when the number changes",
+	"smooth-interface.config.itemCount.changeMinAlpha.tooltip": "When the count changes (shift-clicking, for example) the number bounces back to full brightness from this level. 0 means it fades in from fully transparent; keep some brightness if you pick up items rapidly, otherwise the digits stay hard to read.",
+	"smooth-interface.config.itemCount.staggerPerCell": "Wave delay per slot",
+	"smooth-interface.config.itemCount.staggerPerCell.tooltip": "When a screen opens, how many milliseconds later each slot's number appears compared to the slot to its left or above. 0 makes them all fade in at once.",
+	"smooth-interface.config.itemCount.staggerMax": "Wave delay limit",
+	"smooth-interface.config.itemCount.staggerMax.tooltip": "The maximum accumulated wave delay, so numbers in the bottom-right of a large screen do not wait too long.",
+
+	"smooth-interface.config.value.ms": "%s ms",
+	"smooth-interface.config.value.percent": "%s%%",
+	"smooth-interface.config.value.px": "%s px"
+}

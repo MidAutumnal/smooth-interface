@@ -1,0 +1,47 @@
+{
+	"smooth-interface.config.title": "Smooth Interface 设置",
+
+	"smooth-interface.config.category.tooltip": "物品提示",
+	"smooth-interface.config.category.tooltip.desc": "鼠标停在物品上出现的那块信息浮层。下面控制它的淡入淡出，以及出现瞬间的缩放和上浮。",
+	"smooth-interface.config.category.screen": "界面淡入",
+	"smooth-interface.config.category.screen.desc": "打开背包、箱子等界面时的整体淡入。做法是给整个界面盖一层黑色遮罩，再让遮罩淡掉。",
+	"smooth-interface.config.category.itemCount": "物品数量数字",
+	"smooth-interface.config.category.itemCount.desc": "槽位右下角的数量数字（比如「64」）。打开界面时它们会按位置依次淡入，形成一道斜向的波浪。",
+
+	"smooth-interface.config.tooltip.enabled": "启用物品提示淡入淡出",
+	"smooth-interface.config.tooltip.enabled.tooltip": "关掉后物品提示会像原版一样瞬间出现、瞬间消失。",
+	"smooth-interface.config.tooltip.fadeIn": "淡入时长",
+	"smooth-interface.config.tooltip.fadeIn.tooltip": "鼠标移到物品上到提示完全显示所需的时间。调长一点效果更明显。",
+	"smooth-interface.config.tooltip.fadeOut": "淡出时长",
+	"smooth-interface.config.tooltip.fadeOut.tooltip": "鼠标移开后提示完全消失所需的时间。原版是瞬间消失，所以这个值建议别太短。",
+	"smooth-interface.config.tooltip.startScale": "起始缩放",
+	"smooth-interface.config.tooltip.startScale.tooltip": "提示出现瞬间的大小，100% 表示不做缩放。调到 80% 左右会有明显的「弹出」感。",
+	"smooth-interface.config.tooltip.startOffset": "起始位移",
+	"smooth-interface.config.tooltip.startOffset.tooltip": "提示出现瞬间比最终位置低多少像素，会从下往上浮到位。设为 0 即可关掉这个位移。",
+
+	"smooth-interface.config.screen.enabled": "启用界面淡入",
+	"smooth-interface.config.screen.enabled.tooltip": "关掉后界面会像原版一样直接出现。",
+	"smooth-interface.config.screen.fadeIn": "淡入时长",
+	"smooth-interface.config.screen.fadeIn.tooltip": "界面刚打开时，从最暗到完全清晰所需的时间。",
+	"smooth-interface.config.screen.fadeOut": "遮罩收起时长",
+	"smooth-interface.config.screen.fadeOut.tooltip": "需要提前收起遮罩时用的时长，一般用不到，保持比淡入时长短即可。",
+	"smooth-interface.config.screen.maxDim": "最深遮罩强度",
+	"smooth-interface.config.screen.maxDim.tooltip": "界面刚打开那一瞬间的压暗程度。0% 等于没有效果，100% 会有一瞬间全黑。",
+
+	"smooth-interface.config.itemCount.enabled": "启用数量数字淡入淡出",
+	"smooth-interface.config.itemCount.enabled.tooltip": "关掉后数量数字会像原版一样直接出现。",
+	"smooth-interface.config.itemCount.fadeIn": "淡入时长",
+	"smooth-interface.config.itemCount.fadeIn.tooltip": "每个槽位的数字从透明到完全显示所需的时间。",
+	"smooth-interface.config.itemCount.fadeOut": "淡出时长",
+	"smooth-interface.config.itemCount.fadeOut.tooltip": "数字消失时（比如物品被拿空）的淡出时长。",
+	"smooth-interface.config.itemCount.changeMinAlpha": "数字变化时的起始亮度",
+	"smooth-interface.config.itemCount.changeMinAlpha.tooltip": "数量变化（比如 shift 转移物品）时，数字从这个亮度弹回全亮。设为 0 就是从全透明重新出现；连续拾取物品时建议留一点亮度，否则数字会一直看不清。",
+	"smooth-interface.config.itemCount.staggerPerCell": "波浪延迟 · 每格",
+	"smooth-interface.config.itemCount.staggerPerCell.tooltip": "界面刚打开时，每个槽位的数字比左边 / 上面一格晚多少毫秒出场。设为 0 就是所有数字同时淡入。",
+	"smooth-interface.config.itemCount.staggerMax": "波浪延迟上限",
+	"smooth-interface.config.itemCount.staggerMax.tooltip": "波浪延迟最多累积多少毫秒，避免大界面里右下角的数字等太久。",
+
+	"smooth-interface.config.value.ms": "%s 毫秒",
+	"smooth-interface.config.value.percent": "%s%%",
+	"smooth-interface.config.value.px": "%s 像素"
+}

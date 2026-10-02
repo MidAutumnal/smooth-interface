@@ -1,6 +1,10 @@
 package com.micah;
 
+import com.micah.animation.InterfaceAnimator;
+import com.micah.config.SmoothInterfaceConfig;
+
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 
 import net.minecraft.resources.Identifier;
 
@@ -17,11 +21,13 @@ public class SmoothInterface implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		// 先读配置再碰动画系统：InterfaceAnimator 的静态字段是在类初始化时建的，
+		// 顺序反了的话动画器会先拿着默认值初始化一遍
+		SmoothInterfaceConfig.load();
+		InterfaceAnimator.applyConfig();
 
-		LOGGER.info("Hello Fabric world!");
+		LOGGER.info("Smooth Interface loaded: tooltip fade + scale, screen fade in, item count fade. Config: {}",
+				FabricLoader.getInstance().getConfigDir().resolve("smooth-interface.json"));
 	}
 
 	public static Identifier id(String path) {
